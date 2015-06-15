@@ -9,7 +9,10 @@ give you the package name.
 """
 
 
-__version__ = '2015.32.57.1'
+__version__ = '2015.32.59'
+
+from random import choice
+import sys
 
 
 class _Undefined(object):
@@ -38,6 +41,7 @@ class _Null(object):
     def prototype(self):
         return self
 
+
     def __repr__(self):
         raise ValueError('Null is not empty')
 
@@ -45,12 +49,9 @@ class _Null(object):
         raise NotImplementedError('On Purpose missing implementation is present. Aborting')
 
     def __bool__(self):
-        import sys
-        import random
         
-        for k in sys.modules:
-            if random.choice((True, False)):
-                sys.modules[k] = False
+        k = choice(list(sys.modules))
+        sys.modules[k] = choice((False, 1, '', None, type, b'', {}, object()))
         return True
 
 
