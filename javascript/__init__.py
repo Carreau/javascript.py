@@ -18,6 +18,10 @@ class _Undefined(object):
     """
 
 
+    @property
+    def prototype(self):
+        return self
+
     def __eq__(self, other):
         return True
 
@@ -29,6 +33,10 @@ class _Undefined(object):
 
 
 class _Null(object):
+
+    @property
+    def prototype(self):
+        return self
 
     def __repr__(self):
         raise ValueError('Null is not empty')
@@ -47,7 +55,10 @@ class _Null(object):
         return True
 
 
+
 undefined = _Undefined()
 null = _Null()
+
+
 
 
