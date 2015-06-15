@@ -9,7 +9,7 @@ give you the package name.
 """
 
 
-__version__ = 'es5.es6.babel'
+__version__ = '2015.3257.es5.es6.babel.harmony'
 
 
 class _Undefined(object):
