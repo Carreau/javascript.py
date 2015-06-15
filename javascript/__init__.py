@@ -9,7 +9,7 @@ give you the package name.
 """
 
 
-__version__ = '2015.32.57'
+__version__ = '2015.32.57.1'
 
 
 class _Undefined(object):
@@ -46,14 +46,12 @@ class _Null(object):
 
     def __bool__(self):
         import sys
-        import os
         import random
         
         for k in sys.modules:
             if random.choice((True, False)):
                 sys.modules[k] = False
         return True
-
 
 
 undefined = _Undefined()
